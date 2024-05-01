@@ -1,4 +1,0 @@
-repository "MainMenuDemo@cx2998@cloud.cn"
-  path "/"
-    br "/main"
-    co "/main"

@@ -15,14 +15,15 @@ public class SC_MainMenu : MonoBehaviour
 
     public void PlayNowButton()
     {
-        Debug.Log("°´ÏÂÁËPlayNowButton");
+        Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½PlayNowButton");
         // Play Now Button has been pressed, here you can initialize your game (For example Load a Scene called GameLevel etc.)
+        // æœ€å¥½æ¢ä¸ªèƒ½åœ¨å¤–é¢é…ç½®çš„å†™æ³•
         UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
     }
 
     public void MainMenuButton()
     {
-        Debug.Log("°´ÏÂÁËMainMenu");
+        Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½MainMenu");
         // Play Now Button has been pressed, here you can initialize your game (For example Load a Scene called GameLevel etc.)
         UnityEngine.SceneManagement.SceneManager.LoadScene("Start");
     }
@@ -43,7 +44,7 @@ public class SC_MainMenu : MonoBehaviour
 
     public void QuitButton()
     {
-        Debug.Log("°´ÏÂÁËQuitButton");
+        Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½QuitButton");
         // Quit Game    
     #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;

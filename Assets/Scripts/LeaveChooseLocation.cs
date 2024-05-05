@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ClickToLoadSceneLeft : MonoBehaviour
+public class LeaveChooseLocation : MonoBehaviour
 {
     // Start is called before the first frame update
+
+    
     void Start()
     {
         

@@ -767,7 +767,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6414692807322642510, guid: e15b1340941ab714f9a59025fbc8838a, type: 3}
       propertyPath: m_Name
-      value: GoBackNewspaper
+      value: TeleportPoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414692807322642510, guid: e15b1340941ab714f9a59025fbc8838a, type: 3}
+      propertyPath: m_TagString
+      value: TeleportPoint
       objectReference: {fileID: 0}
     - target: {fileID: 6592702683052819383, guid: e15b1340941ab714f9a59025fbc8838a, type: 3}
       propertyPath: m_Pivot.x
@@ -875,7 +879,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 710347217}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebf74d088f5bbcb4c94f4ad428de5994, type: 3}
+  m_Script: {fileID: 11500000, guid: 8a02b81efe35cd3459eb01ae3dae7fac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   targetSceneName: ChooseLocation

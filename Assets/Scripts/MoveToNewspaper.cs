@@ -1,18 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
 public class MoveToNewspaper : MonoBehaviour
 {
+    //绑定弹窗
+    public GameObject popups;
 
-    //获取一个text对象
-    public TextMeshProUGUI tipsText;
+    public string sceneName; 
+
+    public int titleFlag = 0 ;
     // Start is called before the first frame update
     private bool isDragging = false; // 标记是否正在拖拽
     private Vector3 offset; // 鼠标与物体位置的偏移量
     private string movableTag = "movable"; // 可移动物体的标签
 
+    private string blockString;
     public bool collidable = true;
 
     public Vector3 initialPosition;
@@ -22,7 +25,9 @@ public class MoveToNewspaper : MonoBehaviour
 
     void Start (){
         //记录初始位置
+        Debug.Log("start");
         initialPosition = transform.position;
+        titleFlag = MainStoryController.Instance.playerChoiceIndexs[MainStoryController.Instance.nowMainStoryIndex];
     }
     void OnMouseDown()
     {
@@ -45,14 +50,17 @@ public class MoveToNewspaper : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision){
         if (collision.gameObject.CompareTag("NewsLocation"))
             {
-                if(collidable){
+                if(titleFlag == 0){
+                    PopupsSetting("You should choost a title first");
+                    return;
+                }
+                if(collidable&&collision.gameObject.GetComponent<BlockController>().free()){
                 //修改提示符号
                 // 将自己的active设为false
                 //从collision中获取他身上的text
 
-                tipsText.text = gameObject.name + " is in  " + collision.gameObject.name +"but you can click to cancel";
-                //恢复原位
-                transform.position = initialPosition;
+                blockString = gameObject.name + " is in  " + collision.gameObject.name +"but you can click to cancel";
+                collision.gameObject.GetComponent<BlockController>().setText(blockString);
                 // gameObject.SetActive(false);
                 //获取碰撞体身上的blockController脚本
                 blockController = collision.gameObject.GetComponent<BlockController>();
@@ -82,6 +90,12 @@ public class MoveToNewspaper : MonoBehaviour
         Vector3 mousePoint = Input.mousePosition;
         mousePoint.z = Camera.main.nearClipPlane;
         return Camera.main.ScreenToWorldPoint(mousePoint);
+    }
+
+
+    private void PopupsSetting(string text){
+        popups.SetActive(true);
+        popups.GetComponent<PopupsController>().setPopupsText(text);
     }
 }
 

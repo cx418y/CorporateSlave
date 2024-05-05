@@ -6,6 +6,7 @@ public class ClickAndDrag : MonoBehaviour
     private Vector3 offset; // 鼠标与物体位置的偏移量
     private string movableTag = "movable"; // 可移动物体的标签
 
+
     void OnMouseDown()
     {
         // 检查物体标签是否为movable

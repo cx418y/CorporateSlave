@@ -18,14 +18,14 @@ public class SC_MainMenu : MonoBehaviour
         Debug.Log("������PlayNowButton");
         // Play Now Button has been pressed, here you can initialize your game (For example Load a Scene called GameLevel etc.)
         // 最好换个能在外面配置的写法
-        UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("ChooseLocation");
     }
 
     public void MainMenuButton()
     {
         Debug.Log("������MainMenu");
         // Play Now Button has been pressed, here you can initialize your game (For example Load a Scene called GameLevel etc.)
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Start");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("ChooseLocation");
     }
 
     /* public void CreditsButton()

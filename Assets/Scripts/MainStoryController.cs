@@ -33,6 +33,11 @@ public class MainStoryController : MonoBehaviour
     
     public string[,] mainStoryFeedBacks;
 
+    //需要用一个int数组记录玩家的选择 这个int数组的长度等同于mainStoryLines的长度
+    public int[] playerChoiceIndexs;
+
+
+
     // 在Awake方法中加载剧本内容（这里假设剧本内容已经存储在数组中）
     void Awake()
     {
@@ -76,5 +81,7 @@ public class MainStoryController : MonoBehaviour
             {"feedback4.1","feedback4.2","feedback4.3"},
             {"feedback5.1","feedback5.2","feedback5.3"},
         };
+        //初始化玩家的选择 全部为0
+        playerChoiceIndexs = new int[mainStoryLines.Length];
     }
 }

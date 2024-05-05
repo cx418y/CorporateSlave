@@ -17,6 +17,7 @@ public class ChooseTitle : MonoBehaviour
         if(collision.gameObject.name == "Title1"){
             //通过tiptext告知玩家的选择
             playerChoiceIndex = 1;
+            
             tipsText.text = "You choosed title 1,but you can also choose again";
         }else if(collision.gameObject.name == "Title2"){
             playerChoiceIndex = 2;
@@ -25,6 +26,7 @@ public class ChooseTitle : MonoBehaviour
             playerChoiceIndex = 3;
             tipsText.text = "You choosed title 3,but you can also choose again";
         }else{Debug.Log(collision.gameObject.name);}
+        MainStoryController.Instance.playerChoiceIndexs[MainStoryController.Instance.nowMainStoryIndex] = playerChoiceIndex;
     }
 
     public void recoverTips(){

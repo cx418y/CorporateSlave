@@ -43,7 +43,6 @@ public class TimeTableController : MonoBehaviour
 
     private void feedbackControl( int storyIndex , int titleIndex){
         feedbackText.text = clickToShowAStory.mainStoryFeedBacks[storyIndex,titleIndex];
-
     }
     private void ReadyToNextDay(){
         // nowday++;

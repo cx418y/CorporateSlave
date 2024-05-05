@@ -1,14 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class MoveToNewspaper : MonoBehaviour
 {
+
+    //获取一个text对象
+    public TextMeshProUGUI tipsText;
     // Start is called before the first frame update
     private bool isDragging = false; // 标记是否正在拖拽
     private Vector3 offset; // 鼠标与物体位置的偏移量
     private string movableTag = "movable"; // 可移动物体的标签
 
+    public bool collidable = true;
+
+    public Vector3 initialPosition;
+
+    //获取一个名为BlockController的脚本
+    public BlockController blockController;
+
+    void Start (){
+        //记录初始位置
+        initialPosition = transform.position;
+    }
     void OnMouseDown()
     {
         // 检查物体标签是否为movable
@@ -30,11 +45,22 @@ public class MoveToNewspaper : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision){
         if (collision.gameObject.CompareTag("NewsLocation"))
             {
-                
-                //打印自己的名字和碰撞物体的名字
-                Debug.Log(gameObject.name + " is in  " + collision.gameObject.name);
+                if(collidable){
+                //修改提示符号
                 // 将自己的active设为false
-                gameObject.SetActive(false);
+                //从collision中获取他身上的text
+
+                tipsText.text = gameObject.name + " is in  " + collision.gameObject.name +"but you can click to cancel";
+                //恢复原位
+                transform.position = initialPosition;
+                // gameObject.SetActive(false);
+                //获取碰撞体身上的blockController脚本
+                blockController = collision.gameObject.GetComponent<BlockController>();
+
+                blockController.setChoosednews(gameObject);
+                // gameObject.SetActive(false);
+                collidable = false;
+                }
             }else{
                 Debug.Log("This object is not a NewsLocation!");
             }

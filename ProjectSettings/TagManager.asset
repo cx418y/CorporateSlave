@@ -44,3 +44,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BackGround1
+    uniqueID: 4264600453
+    locked: 0
+  - name: PlayScene
+    uniqueID: 3304353759
+    locked: 0

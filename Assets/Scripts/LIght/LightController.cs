@@ -53,7 +53,7 @@ public class LightController : MonoBehaviour
                 Text.text = "ионГ"+currentTime;
             }
             yield return new WaitForSeconds(1f);
-            lightChange += 0.1f;
+            lightChange += 0.01f;
             mainLight.color = Color.Lerp(mainLight.color, noonColor, lightChange);  
             TimeCount -= 1f;
 

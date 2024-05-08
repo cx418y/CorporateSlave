@@ -23,4 +23,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SideStoryTitle.unity
     guid: 49ed2548f052cde4c810b4543d56c38f
+  - enabled: 1
+    path: Assets/Scenes/TapScence.unity
+    guid: 976e8b4ff977e2141b1aaa3ee1e588ba
+  - enabled: 1
+    path: Assets/Scenes/CorridorScence.unity
+    guid: a1bc65867289c344f8706394687f7bb4
+  - enabled: 1
+    path: Assets/Scenes/ClassScence.unity
+    guid: a67690417e83b1b4c81e818357cc50b8
   m_configObjects: {}

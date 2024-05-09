@@ -5,20 +5,22 @@ using UnityEngine.SceneManagement;
 public class Throw : MonoBehaviour
 {
     public GameObject Gun; // 物体A
-    public GameObject Enemy; // 物体B
+    public GameObject[] Enemies; // 物体B
     public GameObject BulletPrefab; // 物体a的预制体
     public float minDamage = 20f; // 最小伤害
     public float maxDamage = 50f; // 最大伤害
-
+    public float throwForce = 3f; // 投掷力度
     private Vector3 initialPosition; // 物体A的初始位置
     private Rigidbody rbA; // 物体A的刚体
     private float startTime; // 鼠标点击的开始时间
-    private float throwForce = 100f; // 投掷力度
+    
+    private int curThrowIndex = 0;
 
     void Start()
     {
         rbA = BulletPrefab.GetComponent<Rigidbody>();
         initialPosition = Gun.transform.position;
+        StartCoroutine(CheckMouseClick());
     }
 
     void Update()
@@ -43,7 +45,7 @@ public class Throw : MonoBehaviour
         // rbA.velocity = transform.forward * throwForce * holdTime;
 
         // 生成物体a在初始位置
-        GameObject NewObject = Instantiate(BulletPrefab, initialPosition, Quaternion.identity);
+        GameObject NewObject = Instantiate(BulletPrefab, initialPosition, BulletPrefab.transform.rotation);
         Bullet BulletObj = NewObject.GetComponent
                             <Bullet>();
         if(BulletObj != null)
@@ -51,22 +53,27 @@ public class Throw : MonoBehaviour
             BulletObj.SetDamage(Damage);
         }
         // 计算投掷方向
-        Vector3 throwDirection = ( Enemy.transform.position - transform.position).normalized;
+        Vector3 targetPosition = GetMouseClickPosition();
+        Vector3 throwDirection = (targetPosition - initialPosition).normalized;
         // 投掷物体A
         NewObject.GetComponent<Rigidbody>().AddForce(throwDirection * throwForce * holdTime, ForceMode.Impulse);
-        Debug.Log("Enemy.transform.position: " + Enemy.transform.position);
-        Debug.Log("transform.position: " + transform.position);
 
         Destroy(NewObject, 2);
+       /* curThrowIndex++;
+        if(curThrowIndex >= Enemys.Length)
+        {
+            SceneManager.LoadScene("SampleScene");
+        }*/
+        // Debug.Log("throwDirection: " + throwDirection);
 
         // StartCoroutine(GenerateNewBullet());
     }
 
-    IEnumerator GenerateNewBullet()
+/*    IEnumerator GenerateNewBullet()
     {
         yield return new WaitForSeconds(1f);
         Instantiate(BulletPrefab, initialPosition, Quaternion.identity);
-    }
+    }*/
 
     float CalculateDamage(float HoldTime)
     {
@@ -75,24 +82,45 @@ public class Throw : MonoBehaviour
         return Damage;
     }
 
-    /*void OnCollisionEnter(Collision collision)
+
+    Vector3 GetMouseClickPosition()
     {
-        if (collision.gameObject == Enemy)
+        // 获取鼠标点击位置
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit))
         {
-            float damage = CalculateDamage(Time.time - startTime);
-            Health health = collision.gameObject.GetComponent
-                            <Health>();
-            if (health != null)
+            return hit.point;
+        }
+        else
+        {
+            return Vector3.zero;
+        }
+    }
+
+    IEnumerator CheckMouseClick()
+    {
+        while (true)
+        {
+            bool AllDestroyed = true;
+            // 检测敌人是否被全部击倒
+            foreach (GameObject enemy in Enemies)
             {
-                health.TakeDamage(damage);
-                if (health.currentHealth <= 0)
+                if (enemy != null)
                 {
-                    // 摧毁物体B
-                    Destroy(collision.gameObject);
-                    // 加载场景sceneC
-                    SceneManager.LoadScene("SampleScene");
+                    AllDestroyed = false;
+                    break;
                 }
             }
+            if(AllDestroyed)
+            {
+                SceneManager.LoadScene("SampleScene");
+            }
+
+            // 等待一秒
+            yield return new WaitForSeconds(1f);
         }
-    }*/
+    }
+
 }

@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class TapControl : MonoBehaviour
 {
+    public Animator animator;
     private Vector3 angles;
     public float rotationSpeed = 0f;
     private Rigidbody rb;
@@ -69,13 +70,19 @@ public class TapControl : MonoBehaviour
       //  }
            IEnumerator LoadScence()
                     {
-
                         Debug.Log("Wait");
                         // 等待5秒
                         yield return new WaitForSeconds(5f);
-                        SceneManager.LoadScene("CorridorScence");
-                        // 5秒后继续执行以下代码
-                    }
+
+            StartCoroutine(LoadScence2());
+           // animator.SetBool("Fadein", true);
+      //      animator.SetBool("Fadeout", false);
+         //   yield return new WaitForSeconds(1f);
+            // SceneManager.LoadScene("CorridorScence");
+          //  AsyncOperation async = SceneManager.LoadSceneAsync("CorridorScence");
+       //    async.completed += OnLoadedScene;
+            // 5秒后继续执行以下代码
+        }
 
 
 
@@ -95,6 +102,21 @@ public class TapControl : MonoBehaviour
             }
         }
         return false;
+    }
+    //过渡场景切换
+    IEnumerator LoadScence2()
+    {
+        animator.SetBool("Fadein", true);
+        animator.SetBool("Fadeout", false);
+        yield return new WaitForSeconds(1F);
+        AsyncOperation async = SceneManager.LoadSceneAsync("CorridorScence");
+        async.completed += OnLoadedScene;
+
+    }
+    private void OnLoadedScene(AsyncOperation operation)
+    {
+        animator.SetBool("Fadein", false);
+        animator.SetBool("Fadeout", true);
     }
 }
   

@@ -5,12 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class MoveForwardWithButton : MonoBehaviour
 {
+    public Animator animator;
     public float moveSpeed = 5f;
     private bool isMoved=true;
     // Start is called before the first frame update
     void Start()
     {
-        
+          GameObject image = GameObject.Find("Image");
+          animator =image. GetComponent<Animator>();
+   
     }
 
     // Update is called once per frame
@@ -20,6 +23,7 @@ public class MoveForwardWithButton : MonoBehaviour
     }
     public void MoveWithButtonDown()
     {
+        Debug.Log("walk");
         if (isMoved) { 
             StartCoroutine(MoveStart());
         }
@@ -35,6 +39,9 @@ public class MoveForwardWithButton : MonoBehaviour
         yield return new WaitForSeconds(0.05f);
             timer -= 0.05f;
         }
+        animator.SetBool("Fadein", true);
+        animator.SetBool("Fadeout", false);
+        yield return new WaitForSeconds(1f);
         StartCoroutine(LoadScence());
    
     }

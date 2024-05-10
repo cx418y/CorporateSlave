@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class TapControl : MonoBehaviour
 {
-    public Animator animator;
+    private GameObject image;
     private Vector3 angles;
     public float rotationSpeed = 0f;
     private Rigidbody rb;
@@ -18,7 +18,8 @@ public class TapControl : MonoBehaviour
     {
         
         rb = GetComponent<Rigidbody>();
-
+         image = GameObject.Find("Image");
+ 
     }
 
     // Update is called once per frame
@@ -74,14 +75,16 @@ public class TapControl : MonoBehaviour
                         // 等待5秒
                         yield return new WaitForSeconds(5f);
 
-            StartCoroutine(LoadScence2());
-           // animator.SetBool("Fadein", true);
-      //      animator.SetBool("Fadeout", false);
-         //   yield return new WaitForSeconds(1f);
-            // SceneManager.LoadScene("CorridorScence");
-          //  AsyncOperation async = SceneManager.LoadSceneAsync("CorridorScence");
-       //    async.completed += OnLoadedScene;
-            // 5秒后继续执行以下代码
+            //  StartCoroutine(LoadScence2());
+            // animator.SetBool("Fadein", true);
+            //      animator.SetBool("Fadeout", false);
+            //   
+          image.GetComponent<ImageControl>().AnimatorControl();
+           
+            yield return new WaitForSeconds(1f);
+          SceneManager.LoadScene("CorridorScence");
+            //  AsyncOperation async = SceneManager.LoadSceneAsync("CorridorScence");
+            //    async.completed += OnLoadedScene;
         }
 
 
@@ -103,21 +106,22 @@ public class TapControl : MonoBehaviour
         }
         return false;
     }
-    //过渡场景切换
-    IEnumerator LoadScence2()
-    {
-        animator.SetBool("Fadein", true);
-        animator.SetBool("Fadeout", false);
-        yield return new WaitForSeconds(1F);
-        AsyncOperation async = SceneManager.LoadSceneAsync("CorridorScence");
-        async.completed += OnLoadedScene;
+    //过渡场景切换测试
+//    IEnumerator LoadScence2()
+//    {
+//        animator.SetBool("Fadein", true);
+//        animator.SetBool("Fadeout", false);
+//        yield return new WaitForSeconds(1F);
+//        AsyncOperation async = SceneManager.LoadSceneAsync("CorridorScence");
+//        async.completed += OnLoadedScene;
 
-    }
-    private void OnLoadedScene(AsyncOperation operation)
-    {
-        animator.SetBool("Fadein", false);
-        animator.SetBool("Fadeout", true);
-    }
+//    }
+//    private void OnLoadedScene(AsyncOperation operation)
+//    {
+//        animator.SetBool("Fadein", false);
+//        animator.SetBool("Fadeout", true);
+//    }
+
 }
   
 

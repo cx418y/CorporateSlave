@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class CorridorScenceCameraControl : MonoBehaviour
 {
+    private Animator animator;
     private bool flag = true;
     private Camera camera;
     public Color toColor;
@@ -16,7 +17,9 @@ public class CorridorScenceCameraControl : MonoBehaviour
     {
         camera = GetComponent<Camera>();
         moveButton = GameObject.Find("MoveButton");
-        moveButton.SetActive(false);    
+        moveButton.SetActive(false);
+     //   GameObject image = GameObject.Find("Image");
+      //  animator =image. GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -83,18 +86,18 @@ public class CorridorScenceCameraControl : MonoBehaviour
                 transform.eulerAngles = new Vector3(45, 0, 0);
                 flag = false;
                 moveButton.SetActive(true);
-            //    StartCoroutine(LoadScence());
+             //  StartCoroutine(LoadScence());
             }
         } while (waitTime>0);
     }
     //IEnumerator LoadScence()
-    //            {
-                    
+    //{
 
-    //                // 等待5秒
-    //                yield return new WaitForSeconds(5f);
 
-    //                // 5秒后继续执行以下代码
-    //              SceneManager.LoadScene("ClassScence");
-    //            }
+    //    // 等待5秒
+    //    yield return new WaitForSeconds(5f);
+
+    //    // 5秒后继续执行以下代码
+    //    SceneManager.LoadScene("ClassScence");
+    //}
 }

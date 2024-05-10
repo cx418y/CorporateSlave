@@ -10,10 +10,13 @@ public class CorridorScenceCameraControl : MonoBehaviour
     private bool flag = true;
     private Camera camera;
     public Color toColor;
+    private GameObject moveButton;
     // Start is called before the first frame update
     void Start()
     {
-        camera = GetComponent<Camera>(); 
+        camera = GetComponent<Camera>();
+        moveButton = GameObject.Find("MoveButton");
+        moveButton.SetActive(false);    
     }
 
     // Update is called once per frame
@@ -79,20 +82,19 @@ public class CorridorScenceCameraControl : MonoBehaviour
             {
                 transform.eulerAngles = new Vector3(45, 0, 0);
                 flag = false;
-
-                StartCoroutine(LoadScence());
-
+                moveButton.SetActive(true);
+            //    StartCoroutine(LoadScence());
             }
         } while (waitTime>0);
     }
-    IEnumerator LoadScence()
-                {
+    //IEnumerator LoadScence()
+    //            {
                     
 
-                    // 等待5秒
-                    yield return new WaitForSeconds(5f);
+    //                // 等待5秒
+    //                yield return new WaitForSeconds(5f);
 
-                    // 5秒后继续执行以下代码
-                  SceneManager.LoadScene("ClassScence");
-                }
+    //                // 5秒后继续执行以下代码
+    //              SceneManager.LoadScene("ClassScence");
+    //            }
 }

@@ -57,6 +57,7 @@ public class dataSave : MonoBehaviour
         if (File.Exists(filepath))
         {
             day = new Day();
+            ReadData2();
             int current = currentDay;
             current++;
             day.numberDay = current;
@@ -104,7 +105,30 @@ public class dataSave : MonoBehaviour
         {
             Text.text ="µÚ1Ìì";
         }
-    } 
+    }
+    public void ReadData2()
+    {
+        string nowDay = null;
+        string json;
+        string filepath = Application.streamingAssetsPath + "/dataList.json";
+        if (File.Exists(filepath))
+        {
+            using (StreamReader writer = new StreamReader(filepath))
+            {
+                json = writer.ReadToEnd();
+                writer.Close();
+                writer.Dispose();
+            }
+            list = JsonUtility.FromJson<DayList>(json);
+            foreach (Day day in list.list)
+            {
+                //  Debug.Log(day.currentDay);
+                currentDay = day.numberDay;
+                nowDay = day.currentDay;
+                // Debug.Log(nowDay);
+            }
+        }
+    }
     public void RemoveData() 
     {
         if (File.Exists(Application.streamingAssetsPath + "/dataList.json"))

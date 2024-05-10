@@ -156,6 +156,8 @@ MonoBehaviour:
   distanceToLookDown: 3
   lookDownAngle: 50
   lookDownSpeed: 10
+  worldLight: {fileID: 1937999527}
+  lightlightIntensity: 0.2
 --- !u!4 &335169769
 Transform:
   m_ObjectHideFlags: 0

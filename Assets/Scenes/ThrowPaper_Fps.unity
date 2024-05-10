@@ -472,7 +472,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Gun: {fileID: 1838580720}
-  Enemy: {fileID: 392401427}
+  Enemys: []
   BulletPrefab: {fileID: 4357618939521083867, guid: 3cb074cf0a44860469553eb64bbd0baf, type: 3}
   minDamage: 20
   maxDamage: 50

@@ -10,7 +10,7 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter(Collider collision)
     {
-        Debug.Log("Trigger");
+        Debug.Log("Trigger: " + collision.gameObject);
         if (collision.gameObject.CompareTag("Enemy")) // 假设物体 B 的 tag 为 "B"
         {
             
@@ -24,7 +24,7 @@ public class Bullet : MonoBehaviour
                     // 摧毁物体B
                     Destroy(collision.gameObject);
                     // 加载场景sceneC
-                    SceneManager.LoadScene("SampleScene");
+                    // SceneManager.LoadScene("SampleScene");
                 }
             }
 

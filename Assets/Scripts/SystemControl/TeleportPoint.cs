@@ -15,7 +15,7 @@ public class TeleportPoint : MonoBehaviour
 
     void OnMouseDown()
     {
-        // 检查物体标签是否为movable
+        // 检查物体标签是否为TeleportPoint
         if (gameObject.CompareTag("TeleportPoint"))
         {
             //加载场景

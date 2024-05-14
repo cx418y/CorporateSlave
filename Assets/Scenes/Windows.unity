@@ -421,9 +421,13 @@ MonoBehaviour:
   nowMainStoryIndex: 0
   nowDay: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
   systemDay: 0
 =======
 >>>>>>> 353a54b6ccf752163e018b16fbdc423832eccf79
+=======
+  systemDay: 0
+>>>>>>> e93423058243241557846f7eaceb8b83b5282a13
   nowOffset: 0
   playerChoiceIndexs: 
   playerChoiceBlockIndexs: 
@@ -574,6 +578,7 @@ BoxCollider2D:
   m_Size: {x: 1.2951612, y: 1.26}
   m_EdgeRadius: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 --- !u!114 &682880474
 MonoBehaviour:
@@ -635,6 +640,8 @@ Transform:
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 >>>>>>> 353a54b6ccf752163e018b16fbdc423832eccf79
+=======
+>>>>>>> e93423058243241557846f7eaceb8b83b5282a13
 --- !u!1 &858390311
 GameObject:
   m_ObjectHideFlags: 0

@@ -21,6 +21,14 @@ public class EndToday : MonoBehaviour
         {      
             if(MainStoryController.Instance.miniGame && MainStoryController.Instance.work && MainStoryController.Instance.mail)
             {
+                if (MainStoryController.Instance.nowDay == 7 || MainStoryController.Instance.nowDay == 10)
+                {
+                    MailManager.Instance.AddMail();
+                    if(MainStoryController.Instance.nowDay == 10)
+                    {
+                        SceneManager.LoadScene("Mail");
+                    }
+                }
                 MainStoryController.Instance.nowDay++;
                 MainStoryController.Instance.systemDay++;
                 MainStoryController.Instance.miniGame = false;
@@ -28,6 +36,7 @@ public class EndToday : MonoBehaviour
                 MainStoryController.Instance.mail = false;
                 MainStoryController.Instance.nowOffset = 0;
                 // SceneManager.LoadScene("MainScene");
+                
             }else{
                 dialogBox.SetActive(true);
                 TipText.text = "请先完成今天的工作！";

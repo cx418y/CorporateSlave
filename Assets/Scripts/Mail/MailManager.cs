@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class MailManager : MonoBehaviour
 {
@@ -8,6 +9,9 @@ public class MailManager : MonoBehaviour
     private MailManager() { }
     //私有对象
     private static MailManager instance;
+
+    public TextMeshProUGUI Text;
+
     //公有对象
     public static MailManager Instance
     {
@@ -24,6 +28,7 @@ public class MailManager : MonoBehaviour
     public GameObject[] mailList;
     public GameObject contentText;
     public Sprite[] sprites;
+    int mailCount = 0;
 
     void Awake()
     {
@@ -52,8 +57,22 @@ public class MailManager : MonoBehaviour
         
     }
 
-   /* void setContent(string content)
+    public void SetContent(string content,int size)
     {
-        GetComponent<TextMesh>
-    }*/
+        Text.text = content;
+        Text.fontSize = size;
+    }
+
+    public void AddMail()
+    {
+        if(mailCount == 0)
+        {
+            mailList[0].SetActive(true);
+        }
+        else
+        {
+            mailList[1].SetActive(true);
+        }
+        Blinking.Instance.StartBlinking();
+    }
 }

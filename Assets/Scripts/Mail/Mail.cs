@@ -4,20 +4,13 @@ using UnityEngine;
 
 public class Mail : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public string content= "hhh \n hhhh";
+    public int fontSize = 16;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnMouseDown()
     {
-        
+        MailManager.Instance.SetContent(content,fontSize);
+        GetComponent<SpriteRenderer>().sprite = MailManager.Instance.sprites[1];
     }
 }

@@ -31,16 +31,16 @@ public class SC_MainMenu : MonoBehaviour
     {
         // Show Credits Menu
         MainMenu.SetActive(false);
-        AboutUsMenu.SetActive(true);
-        backgroundImage.color = new Color(0.3f, 0.3f, 0.3f, 1f);
+       // AboutUsMenu.SetActive(true);
+       // backgroundImage.color = new Color(0.3f, 0.3f, 0.3f, 1f);
     }
 
     public void BackButton()
     {
         // Show Credits Menu
         MainMenu.SetActive(true);
-        AboutUsMenu.SetActive(false);
-        backgroundImage.color = new Color(1f, 1f, 1f, 1f);
+     //   AboutUsMenu.SetActive(false);
+       // backgroundImage.color = new Color(1f, 1f, 1f, 1f);
     }
 
     /*public void MainMenuButton()

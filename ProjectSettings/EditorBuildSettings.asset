@@ -44,4 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ThrowPaperPlane.unity
     guid: 739c94bee2db73541a8f6e94de592c2a
+  - enabled: 1
+    path: Assets/Scenes/CorridorScence.unity
+    guid: a1bc65867289c344f8706394687f7bb4
   m_configObjects: {}

@@ -48,12 +48,13 @@ public class MoveToNewspaper : MonoBehaviour
     void OnMouseUp()
     {
         isDragging = false;
+        transform.position = initialPosition;
     }
     void OnCollisionEnter2D(Collision2D collision){
         if (collision.gameObject.CompareTag("NewsLocation"))
             {
                 if(titleFlag == 0){
-                    PopupsSetting("You should choost a title first");
+                    PopupsSetting("先把放大镜拖拽到news上为它选择一个标题");
                     return;
                 }
                 if(collidable&&collision.gameObject.GetComponent<BlockController>().free()){
@@ -62,12 +63,18 @@ public class MoveToNewspaper : MonoBehaviour
                 //从collision中获取他身上的text
 
                 blockString = gameObject.name + " is in  " + collision.gameObject.name +"but you can click to cancel";
+                //调整自己的位置
+                float y = 3.0f * myOffset;
+                transform.position = new Vector3(12.0f, y, 0.0f);
                 collision.gameObject.GetComponent<BlockController>().setText(blockString);
+                //修改对应的BLCOK
+                
                 // gameObject.SetActive(false);
                 //获取碰撞体身上的blockController脚本
                 blockController = collision.gameObject.GetComponent<BlockController>();
 
                 blockController.setChoosednews(gameObject);
+                blockController.setChoosedBlock(myOffset);
                 // gameObject.SetActive(false);
                 collidable = false;
                 }

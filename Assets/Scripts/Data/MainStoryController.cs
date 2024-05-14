@@ -28,6 +28,7 @@ public class MainStoryController : MonoBehaviour
     //public string[] mainStoryLines;
     public int nowMainStoryIndex = 0;
     public int nowDay = 0;
+    public int systemDay = 0;
     public int nowOffset = 0;
 
     //不同的标题

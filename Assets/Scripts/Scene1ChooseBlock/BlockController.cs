@@ -10,6 +10,8 @@ public class BlockController : MonoBehaviour
     public GameObject choosednews;
     public TextMeshProUGUI tipsText;
 
+    public int blockNumber;
+
     //编写一个脚本 setChoosednews() 当其他脚本调用他时 可以将choosenews设置为传入的gaemobject
     public void setChoosednews(GameObject news){
         if(choosednews==null){
@@ -57,4 +59,9 @@ public class BlockController : MonoBehaviour
         return false;
     }
     }
+    public void setChoosedBlock( int offset){
+        MainStoryController.Instance.playerChoiceBlockIndexs[MainStoryController.Instance.nowDay*3+offset] = blockNumber;
+
+    }
+    
 }

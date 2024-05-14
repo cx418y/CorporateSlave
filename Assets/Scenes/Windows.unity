@@ -420,6 +420,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nowMainStoryIndex: 0
   nowDay: 0
+<<<<<<< HEAD
+  systemDay: 0
+=======
+>>>>>>> 353a54b6ccf752163e018b16fbdc423832eccf79
   nowOffset: 0
   playerChoiceIndexs: 
   playerChoiceBlockIndexs: 
@@ -569,6 +573,8 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.2951612, y: 1.26}
   m_EdgeRadius: 0
+<<<<<<< HEAD
+=======
 --- !u!114 &682880474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -628,6 +634,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> 353a54b6ccf752163e018b16fbdc423832eccf79
 --- !u!1 &858390311
 GameObject:
   m_ObjectHideFlags: 0
@@ -1118,10 +1125,9 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 545214536}
   - {fileID: 858390314}
   - {fileID: 1981361956}
-  - {fileID: 545214536}
-  - {fileID: 773489707}
   - {fileID: 140119096}
   - {fileID: 868624008}
   - {fileID: 218417210}

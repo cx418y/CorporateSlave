@@ -269,7 +269,6 @@ GameObject:
   m_Component:
   - component: {fileID: 499327657}
   - component: {fileID: 499327656}
-  - component: {fileID: 499327658}
   m_Layer: 0
   m_Name: "mail\u9875\u9762 \u62F7\u8D1D"
   m_TagString: Untagged
@@ -346,24 +345,58 @@ Transform:
   - {fileID: 1777269485}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &499327658
+--- !u!1 &729347053
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 729347055}
+  - component: {fileID: 729347054}
+  m_Layer: 0
+  m_Name: MailManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &729347054
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 499327655}
+  m_GameObject: {fileID: 729347053}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: addaecfa83fe6d54aa2d819661509489, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Text: {fileID: 1731820637}
-  mailList: []
+  mailList:
+  - {fileID: 1544462092}
+  - {fileID: 808377615}
   contentText: {fileID: 1731820635}
   sprites:
-  - {fileID: 21300000, guid: 71c0232b379c92a47b47d6197c3e7fdb, type: 3}
   - {fileID: 21300000, guid: e7602c913d54dd1449b641a0d2740531, type: 3}
+  - {fileID: 21300000, guid: 71c0232b379c92a47b47d6197c3e7fdb, type: 3}
+--- !u!4 &729347055
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729347053}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.876375, y: -5.216567, z: -0.052688733}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &774656245
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,7 +552,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &808377616
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -863,7 +896,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1544462093
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1473,3 +1506,4 @@ SceneRoots:
   - {fileID: 499327657}
   - {fileID: 1544462094}
   - {fileID: 808377617}
+  - {fileID: 729347055}

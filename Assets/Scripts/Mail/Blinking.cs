@@ -25,6 +25,8 @@ public class Blinking : MonoBehaviour
 
     private bool isBlinking = false;
 
+    public GameObject whiteMail;
+
     void Awake()
     {
         // 检查是否已存在单例实例
@@ -50,7 +52,7 @@ public class Blinking : MonoBehaviour
     {
         // 启动 Coroutine 来控制图片的闪烁
         isBlinking = true;
-        SpriteRenderer redDot = transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>();
+        SpriteRenderer redDot = whiteMail.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>();
         Color color = redDot.color;
         // 修改透明度值
         color.a = 1;
@@ -63,17 +65,17 @@ public class Blinking : MonoBehaviour
         while (isBlinking)
         {
             // 切换图片的显示状态
-            SpriteRenderer icon = GetComponent<SpriteRenderer>();
+            SpriteRenderer icon = whiteMail.GetComponent<SpriteRenderer>();
             Color color = icon.color;
             // 修改透明度值
             color.a = 1-color.a;
             icon.color = color;
 
-            SpriteRenderer redDot = transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>();
+            SpriteRenderer redDot = whiteMail.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>();
             Color color2 = redDot.color;
             // 修改透明度值
             color2.a = 1 - color2.a;
-            redDot.color = color;
+            redDot.color = color2;
 
             yield return new WaitForSeconds(blinkInterval);
         }
@@ -85,17 +87,17 @@ public class Blinking : MonoBehaviour
         // 停止 Coroutine
         isBlinking = false;
         StopCoroutine(Blink());
-        SpriteRenderer icon = GetComponent<SpriteRenderer>();
+        SpriteRenderer icon = whiteMail.GetComponent<SpriteRenderer>();
         Color color = icon.color;
         // 修改透明度值
         color.a = 1;
         icon.color = color;
 
-        SpriteRenderer redDot = transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>();
+        SpriteRenderer redDot = whiteMail.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>();
         Color color2 = redDot.color;
         // 修改透明度值
         color2.a = 0;
-        redDot.color = color;
+        redDot.color = color2;
     }
 
     void OnDestroy()

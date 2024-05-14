@@ -478,7 +478,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7651563286407656866, guid: e15b1340941ab714f9a59025fbc8838a, type: 3}
       propertyPath: m_text
-      value: Start your work,choose a title for the story
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8146994045333186917, guid: e15b1340941ab714f9a59025fbc8838a, type: 3}
       propertyPath: m_Size.x
@@ -1373,6 +1373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07a132fc3ac818047a6dce63f58ea83d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialPosition: {x: 0, y: 0, z: 0}
 --- !u!50 &988573290
 Rigidbody2D:
   serializedVersion: 4
@@ -1780,6 +1781,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07a132fc3ac818047a6dce63f58ea83d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialPosition: {x: 0, y: 0, z: 0}
 --- !u!50 &1808133995
 Rigidbody2D:
   serializedVersion: 4
@@ -2316,6 +2318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07a132fc3ac818047a6dce63f58ea83d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialPosition: {x: 0, y: 0, z: 0}
 --- !u!50 &2077181689
 Rigidbody2D:
   serializedVersion: 4
@@ -2418,6 +2421,10 @@ PrefabInstance:
     - target: {fileID: 6737034408427634915, guid: d887c14e7eb1d0748a708a11cffe5cdd, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7951977423111821356, guid: d887c14e7eb1d0748a708a11cffe5cdd, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -4,5 +4,44 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Start.unity
+    guid: 3cc9dc3d68beaed41b3fa9da55e8ccf1
+  - enabled: 1
+    path: Assets/Scenes/Windows.unity
+    guid: de966517e347a2b429f35fe34bc5521c
+  - enabled: 1
+    path: Assets/Scenes/ThrowPaper_Fps.unity
+    guid: a9fdbbcb504ae3444a0f13330d60ba15
+  - enabled: 1
+    path: Assets/Scenes/ChooseLocation.unity
+    guid: d258372c0be37d14a9e062e8db12259f
+  - enabled: 1
+    path: Assets/Scenes/ClassScence.unity
+    guid: a67690417e83b1b4c81e818357cc50b8
+  - enabled: 1
+    path: Assets/Scenes/Corridor.unity
+    guid: f1a7707f827529643ba81c8e2b57c98e
+  - enabled: 1
+    path: Assets/Scenes/Mail.unity
+    guid: e23959f04b3339f4fa6feb6afa52cfc0
+  - enabled: 1
+    path: Assets/Scenes/MainScence.unity
+    guid: ba721fe8d014fe04bb14d55c13ff02f0
+  - enabled: 1
+    path: Assets/Scenes/MainStoryTitle.unity
+    guid: 2e0a2ed8db58ae54b9cb625f65644b62
+  - enabled: 1
+    path: Assets/Scenes/Num_HuaRong.unity
+    guid: 61d87287d9aca984f9d296f9f2e60354
+  - enabled: 1
+    path: Assets/Scenes/SideStoryTitle.unity
+    guid: 49ed2548f052cde4c810b4543d56c38f
+  - enabled: 1
+    path: Assets/Scenes/TapScence.unity
+    guid: 976e8b4ff977e2141b1aaa3ee1e588ba
+  - enabled: 1
+    path: Assets/Scenes/ThrowPaperPlane.unity
+    guid: 739c94bee2db73541a8f6e94de592c2a
   m_configObjects: {}

@@ -50,19 +50,18 @@ public class TapControl : MonoBehaviour
             if (transform.eulerAngles.y<1)
                 {
                     isLoadScence = true;
-                }  
+                }
             if (isLoadScence)
-                { 
-                 if (IsSceneInBuildSettings("CorridorScence"))
-                {
-                    StartCoroutine(LoadScence());
-                    
-                }
-                else
-                {
-                    Debug.LogError("Scene " + "CorridorScence" + " is not in the build settings!");
-                }
-                }
+            {
+
+                StartCoroutine(LoadScence());
+
+            }
+            else
+            {
+                Debug.Log("Scene " + "CorridorScence" + " is not in the build settings!");
+
+            }
        }
        // else if(transform.eulerAngles.y>350)
       //  {
@@ -95,17 +94,17 @@ public class TapControl : MonoBehaviour
        rotationSpeed += 5;
         transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime);
     }
-    bool IsSceneInBuildSettings(string sceneName)
-    {
-        foreach (EditorBuildSettingsScene scene in EditorBuildSettings.scenes)
-        {
-            if (scene.path.IndexOf(sceneName) != -1)
-            {
-                return true;
-            }
-        }
-        return false;
-    }
+    //bool IsSceneInBuildSettings(string sceneName)
+    //{
+    //    foreach (EditorBuildSettingsScene scene in EditorBuildSettings.scenes)
+    //    {
+    //        if (scene.path.IndexOf(sceneName) != -1)
+    //        {
+    //            return true;
+    //        }
+    //    }
+    //    return false;
+    //}
     //¹ý¶É³¡¾°ÇÐ»»²âÊÔ
 //    IEnumerator LoadScence2()
 //    {

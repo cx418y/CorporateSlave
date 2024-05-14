@@ -73,6 +73,7 @@ public class MailManager : MonoBehaviour
         {
             mailList[1].SetActive(true);
         }
+        mailCount++;
         Blinking.Instance.StartBlinking();
     }
 }

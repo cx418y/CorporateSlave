@@ -81,7 +81,7 @@ public class TapControl : MonoBehaviour
           image.GetComponent<ImageControl>().AnimatorControl();
            
             yield return new WaitForSeconds(1f);
-          SceneManager.LoadScene("CorridorScence");
+          SceneManager.LoadScene("Corridor");
             //  AsyncOperation async = SceneManager.LoadSceneAsync("CorridorScence");
             //    async.completed += OnLoadedScene;
         }

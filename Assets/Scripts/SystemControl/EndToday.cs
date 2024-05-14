@@ -21,13 +21,13 @@ public class EndToday : MonoBehaviour
         {      
             if(MainStoryController.Instance.miniGame && MainStoryController.Instance.work && MainStoryController.Instance.mail)
             {
-                if (MainStoryController.Instance.nowDay == 7 || MainStoryController.Instance.nowDay == 10)
+                if (MainStoryController.Instance.nowDay == 7 || MainStoryController.Instance.nowDay == 9)
                 {
                     MailManager.Instance.AddMail();
-                    if(MainStoryController.Instance.nowDay == 10)
-                    {
-                        SceneManager.LoadScene("Mail");
-                    }
+                }
+                if(MainStoryController.Instance.nowDay == 10)
+                {
+                    SceneManager.LoadScene("TapScence");
                 }
                 MainStoryController.Instance.nowDay++;
                 MainStoryController.Instance.systemDay++;

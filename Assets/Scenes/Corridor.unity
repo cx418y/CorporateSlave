@@ -262,6 +262,8 @@ MonoBehaviour:
   - {fileID: 214162811}
   - {fileID: 1972810562}
   lightDownSpeed: 100
+  distanceToLoadScene: 12
+  nextSceneName: ClassScence
 --- !u!4 &335169769
 Transform:
   m_ObjectHideFlags: 0

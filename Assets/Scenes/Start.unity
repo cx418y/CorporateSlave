@@ -196,7 +196,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -45}
-  m_SizeDelta: {x: 1385, y: 780.43646}
+  m_SizeDelta: {x: 1213.8593, y: 684}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &97363189
 MonoBehaviour:
@@ -827,7 +827,7 @@ MonoBehaviour:
   MainMenu: {fileID: 1939984731}
   AboutUsMenu: {fileID: 51734617}
   backgroundImage: {fileID: 97363189}
-  MainSceneName: Windows
+  MainSceneName: MainScence
 --- !u!1 &1057246642
 GameObject:
   m_ObjectHideFlags: 0

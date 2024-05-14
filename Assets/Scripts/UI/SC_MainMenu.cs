@@ -1,13 +1,11 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class SC_MainMenu : MonoBehaviour
 {
-    public Image backgroundImage;
     public GameObject MainMenu;
-    public GameObject AboutUsMenu;
+    // public GameObject CreditsMenu;
 
     // Start is called before the first frame update
     void Start()
@@ -17,9 +15,10 @@ public class SC_MainMenu : MonoBehaviour
 
     public void PlayNowButton()
     {
-        
+        Debug.Log("������PlayNowButton");
         // Play Now Button has been pressed, here you can initialize your game (For example Load a Scene called GameLevel etc.)
-        UnityEngine.SceneManagement.SceneManager.LoadScene("ChooseLocation");
+        // 最好换个能在外面配置的写法
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Windows");
     }
 
     public void MainMenuButton()
@@ -53,6 +52,7 @@ public class SC_MainMenu : MonoBehaviour
 
     public void QuitButton()
     {
+        Debug.Log("������QuitButton");
         // Quit Game    
     #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;

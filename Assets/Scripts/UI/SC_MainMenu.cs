@@ -1,39 +1,46 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SC_MainMenu : MonoBehaviour
 {
     public GameObject MainMenu;
     // public GameObject CreditsMenu;
-
+    public GameObject AboutUsMenu;
+    public Image backgroundImage;
+    public string MainSceneName;
     // Start is called before the first frame update
     void Start()
     {
         MainMenu.SetActive(true);
     }
 
-    public void PlayNowButton()
+    public void StartGameButton()
     {
-        Debug.Log("������PlayNowButton");
-        // Play Now Button has been pressed, here you can initialize your game (For example Load a Scene called GameLevel etc.)
-        // 最好换个能在外面配置的写法
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Windows");
+        UnityEngine.SceneManagement.SceneManager.LoadScene(MainSceneName);
     }
 
-    public void MainMenuButton()
+    public void NewGameButton()
     {
-        Debug.Log("������MainMenu");
-        // Play Now Button has been pressed, here you can initialize your game (For example Load a Scene called GameLevel etc.)
-        UnityEngine.SceneManagement.SceneManager.LoadScene("ChooseLocation");
+        UnityEngine.SceneManagement.SceneManager.LoadScene(MainSceneName);
     }
 
-    /* public void CreditsButton()
-     {
-         // Show Credits Menu
-         MainMenu.SetActive(false);
-         CreditsMenu.SetActive(true);
-     }*/
+    public void AboutUsButton()
+    {
+        // Show Credits Menu
+        MainMenu.SetActive(false);
+       // AboutUsMenu.SetActive(true);
+       // backgroundImage.color = new Color(0.3f, 0.3f, 0.3f, 1f);
+    }
+
+    public void BackButton()
+    {
+        // Show Credits Menu
+        MainMenu.SetActive(true);
+     //   AboutUsMenu.SetActive(false);
+       // backgroundImage.color = new Color(1f, 1f, 1f, 1f);
+    }
 
     /*public void MainMenuButton()
     {

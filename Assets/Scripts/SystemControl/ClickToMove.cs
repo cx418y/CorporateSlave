@@ -6,6 +6,9 @@ public class ClickAndDrag : MonoBehaviour
     private Vector3 offset; // 鼠标与物体位置的偏移量
     private string movableTag = "movable"; // 可移动物体的标签
 
+    //记录初始位置
+    public Vector3 initialPosition;
+
 
     void OnMouseDown()
     {
@@ -24,8 +27,14 @@ public class ClickAndDrag : MonoBehaviour
     void OnMouseUp()
     {
         isDragging = false;
+        transform.position = initialPosition;
+
     }
 
+    void Start (){
+        //记录初始位置
+        initialPosition = transform.position;
+    }
     void Update()
     {
         if (isDragging)

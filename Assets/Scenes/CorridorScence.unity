@@ -708,7 +708,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u5411\u524D\u8D70"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4c87bdf255be95d40b9b6d6537624ffd, type: 2}
+  m_fontAsset: {fileID: 0}
   m_sharedMaterial: {fileID: 8937825587026220820, guid: 4c87bdf255be95d40b9b6d6537624ffd, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -983,7 +983,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7061192731620046311, guid: 3d9a12dd0968fe74d8433535d7ce72f9, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

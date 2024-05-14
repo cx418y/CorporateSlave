@@ -8,7 +8,7 @@ public class OpenMail : TeleportPoint
     // Start is called before the first frame update
     void Start()
     {
-        
+       // Blinking.Instance.StartBlinking();
     }
 
     void OnMouseDown()
@@ -16,10 +16,11 @@ public class OpenMail : TeleportPoint
         // 检查物体标签是否为TeleportPoint
         if (gameObject.CompareTag("TeleportPoint"))
         {
-            Blinking blinking = whiteMail.GetComponent
+            Blinking.Instance.StopBlinking();
+            /*Blinking blinking = whiteMail.GetComponent
                            <Blinking>();
             blinking.StopBlinking();
-            blinking.StopAllCoroutines();
+            blinking.StopAllCoroutines();*/
             //加载场景
             LoadTargetScene();
         }

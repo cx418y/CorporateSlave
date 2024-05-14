@@ -1427,6 +1427,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popups: {fileID: 6414692807164003105}
+  myOffset: 2
   sceneName: MainStoryTitle
   titleFlag: 0
   collidable: 1
@@ -1659,6 +1660,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popups: {fileID: 6414692807164003105}
+  myOffset: 1
   sceneName: MainStoryTitle
   titleFlag: 0
   collidable: 1

@@ -7,7 +7,7 @@ public class ClickToShowNextMainStory : MonoBehaviour
     void Start()
     {
         // 通过ScriptManager单例类访问剧本内容数组
-        scriptLines = MainStoryController.Instance.mainStoryLines;
+        //scriptLines = MainStoryController.Instance.mainStoryLines;
     }
 
     void OnMouseDown(){

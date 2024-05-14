@@ -18,19 +18,19 @@ public class ChooseTitle : MonoBehaviour
             //通过tiptext告知玩家的选择
             playerChoiceIndex = 1;
             
-            tipsText.text = "You choosed title 1,but you can also choose again";
+            tipsText.text = "你选择了标题1，但你可以拖拽到此重新选择";
         }else if(collision.gameObject.name == "Title2"){
             playerChoiceIndex = 2;
-            tipsText.text = "You choosed title 2,but you can also choose again";
+            tipsText.text = "你选择了标题2，但你可以拖拽到此重新选择";
         }else if(collision.gameObject.name == "Title3"){
             playerChoiceIndex = 3;
-            tipsText.text = "You choosed title 3,but you can also choose again";
+            tipsText.text = "你选择了标题3，但你可以拖拽到此重新选择";
         }else{Debug.Log(collision.gameObject.name);}
         MainStoryController.Instance.playerChoiceIndexs[MainStoryController.Instance.nowMainStoryIndex] = playerChoiceIndex;
     }
 
     public void recoverTips(){
-        tipsText.text = "Put your choice here";
+        tipsText.text = "请把你选择的标题放在这里";
     }
 
     void Start()

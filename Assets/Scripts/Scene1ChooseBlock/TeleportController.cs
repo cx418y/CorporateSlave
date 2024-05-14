@@ -20,6 +20,7 @@ public class TeleportController : MonoBehaviour
         {
             //加载场景
             //获取脚本上名为sceneName的变量
+            MainStoryController.Instance.nowOffset = collision.gameObject.GetComponent<MoveToNewspaper>().myOffset;
             LoadTargetScene(collision.gameObject.GetComponent<MoveToNewspaper>().sceneName);
         }
     }

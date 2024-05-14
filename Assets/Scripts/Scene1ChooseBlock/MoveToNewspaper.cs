@@ -7,6 +7,8 @@ public class MoveToNewspaper : MonoBehaviour
     //绑定弹窗
     public GameObject popups;
 
+    public int myOffset ;
+
     public string sceneName; 
 
     public int titleFlag = 0 ;

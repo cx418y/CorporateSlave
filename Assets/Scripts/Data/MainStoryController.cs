@@ -52,6 +52,8 @@ public class MainStoryController : MonoBehaviour
     public int[] playerChoiceBlockIndexs;
     public int[,] BlockWeight ;
 
+    public string[,] plot1;
+
 
     // 在Awake方法中加载剧本内容（这里假设剧本内容已经存储在数组中）
     void ShuffleRows(string[,] array)
@@ -127,6 +129,13 @@ public class MainStoryController : MonoBehaviour
             // 添加更多的剧本内容...
         };
         */
+        //填充剧本
+        plot1 = new string[,]
+        {   
+            {"同事：","早上好。今天是上班的第一天，记得查看新闻线索哦~"},
+            {"我：","哦哦，好的。我当然记得啦！"},
+            {"同事：","好，期待你的选题和排版！"},
+        };
         //为每个story添加3个可选的标题
         mainStoryTitles = new string[,]
         {

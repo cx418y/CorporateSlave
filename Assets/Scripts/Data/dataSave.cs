@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class DayList {
     public List<Day> list = new List<Day>();
@@ -19,7 +20,9 @@ public class dataSave : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
- 
+        currentDay = MainStoryController.Instance.nowDay;
+        Text.text = "第" + currentDay + "天";
+
     }
 
     // Update is called once per frame
@@ -28,27 +31,28 @@ public class dataSave : MonoBehaviour
         
     }
     //开始新游戏
-  public  void StartData() { 
-    day = new Day();
-        day.numberDay = number;
-        day.currentDay = "第"+day.numberDay +"天";
-      //  Debug.Log(day.numberDay+day.currentDay);
-        list.list.Add(day);
-       // Debug.Log(list.list[0].currentDay);
-          string json = JsonUtility.ToJson(list);
-       
-        Debug.Log(json);
-        if (!File.Exists(Application.streamingAssetsPath + "/dataList.json"))
-        {
-           string filepath = Application.streamingAssetsPath + "/dataList.json";
-        using (StreamWriter writer = new StreamWriter(filepath))
-        {
-            writer.WriteLine(json);
-            writer.Close();
-            writer.Dispose();
-        } 
-        }
-        
+  public  void StartData() {
+        /*day = new Day();
+            day.numberDay = number;
+            day.currentDay = "第"+day.numberDay +"天";
+          //  Debug.Log(day.numberDay+day.currentDay);
+            list.list.Add(day);
+           // Debug.Log(list.list[0].currentDay);
+              string json = JsonUtility.ToJson(list);
+
+            Debug.Log(json);
+            if (!File.Exists(Application.streamingAssetsPath + "/dataList.json"))
+            {
+               string filepath = Application.streamingAssetsPath + "/dataList.json";
+            using (StreamWriter writer = new StreamWriter(filepath))
+            {
+                writer.WriteLine(json);
+                writer.Close();
+                writer.Dispose();
+            } 
+            }*/
+        SceneManager.LoadScene("windows");
+
     }
     //添加数据
    public void SaveData()

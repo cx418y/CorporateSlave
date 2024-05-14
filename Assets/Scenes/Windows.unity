@@ -301,6 +301,7 @@ GameObject:
   m_Component:
   - component: {fileID: 488930063}
   - component: {fileID: 488930062}
+  - component: {fileID: 488930064}
   m_Layer: 0
   m_Name: white mail
   m_TagString: Untagged
@@ -375,6 +376,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &488930064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488930061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58b2ae6703361aa448349ad15d0cc2c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blinkInterval: 0.2
 --- !u!1 &545214534
 GameObject:
   m_ObjectHideFlags: 0
@@ -404,9 +418,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c76b147d4373d6e4589684bb8437bbd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainStoryLines: []
   nowMainStoryIndex: 0
+  nowDay: 0
+  nowOffset: 0
   playerChoiceIndexs: 
+  playerChoiceBlockIndexs: 
 --- !u!4 &545214536
 Transform:
   m_ObjectHideFlags: 0
@@ -433,7 +449,7 @@ GameObject:
   - component: {fileID: 682880471}
   - component: {fileID: 682880470}
   - component: {fileID: 682880473}
-  - component: {fileID: 682880472}
+  - component: {fileID: 682880474}
   m_Layer: 0
   m_Name: mail icon
   m_TagString: TeleportPoint
@@ -508,19 +524,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &682880472
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 682880469}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a02b81efe35cd3459eb01ae3dae7fac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetSceneName: Mail
 --- !u!61 &682880473
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -566,6 +569,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.2951612, y: 1.26}
   m_EdgeRadius: 0
+--- !u!114 &682880474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 682880469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2291538f445d024fa2354fb8587bfaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetSceneName: Mail
+  whiteMail: {fileID: 488930061}
 --- !u!1 &773489705
 GameObject:
   m_ObjectHideFlags: 0

@@ -32,4 +32,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ClassScence.unity
     guid: a67690417e83b1b4c81e818357cc50b8
+  - enabled: 1
+    path: Assets/Scenes/Num_HuaRong.unity
+    guid: 61d87287d9aca984f9d296f9f2e60354
+  - enabled: 1
+    path: Assets/Scenes/Mail.unity
+    guid: e23959f04b3339f4fa6feb6afa52cfc0
   m_configObjects: {}

@@ -301,7 +301,6 @@ GameObject:
   m_Component:
   - component: {fileID: 488930063}
   - component: {fileID: 488930062}
-  - component: {fileID: 488930064}
   m_Layer: 0
   m_Name: white mail
   m_TagString: Untagged
@@ -376,19 +375,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &488930064
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 488930061}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58b2ae6703361aa448349ad15d0cc2c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blinkInterval: 0.2
 --- !u!1 &545214534
 GameObject:
   m_ObjectHideFlags: 0
@@ -420,14 +406,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nowMainStoryIndex: 0
   nowDay: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
   systemDay: 0
-=======
->>>>>>> 353a54b6ccf752163e018b16fbdc423832eccf79
-=======
-  systemDay: 0
->>>>>>> e93423058243241557846f7eaceb8b83b5282a13
   nowOffset: 0
   playerChoiceIndexs: 
   playerChoiceBlockIndexs: 
@@ -457,7 +436,7 @@ GameObject:
   - component: {fileID: 682880471}
   - component: {fileID: 682880470}
   - component: {fileID: 682880473}
-  - component: {fileID: 682880474}
+  - component: {fileID: 682880472}
   m_Layer: 0
   m_Name: mail icon
   m_TagString: TeleportPoint
@@ -532,6 +511,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &682880472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 682880469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a02b81efe35cd3459eb01ae3dae7fac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetSceneName: Mail
 --- !u!61 &682880473
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -577,71 +569,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.2951612, y: 1.26}
   m_EdgeRadius: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
---- !u!114 &682880474
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 682880469}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2291538f445d024fa2354fb8587bfaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetSceneName: Mail
-  whiteMail: {fileID: 488930061}
---- !u!1 &773489705
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 773489707}
-  - component: {fileID: 773489706}
-  m_Layer: 0
-  m_Name: SideStoryAndFeedbacks
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &773489706
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 773489705}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d8dfe4ebbacb5d409e3ebae16400e02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SideStoryLines: []
---- !u!4 &773489707
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 773489705}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> 353a54b6ccf752163e018b16fbdc423832eccf79
-=======
->>>>>>> e93423058243241557846f7eaceb8b83b5282a13
 --- !u!1 &858390311
 GameObject:
   m_ObjectHideFlags: 0
@@ -704,7 +631,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7.018341
+  orthographic size: 7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

@@ -27,9 +27,16 @@ public class MainStoryController : MonoBehaviour
     // 剧本内容数组
     //public string[] mainStoryLines;
     public int nowMainStoryIndex = 0;
+    //控制事件的天数
     public int nowDay = 0;
+    //控制剧情的天数
     public int systemDay = 0;
     public int nowOffset = 0;
+
+    //用来判断有没有满足下班的条件
+    public bool miniGame = true;
+    public bool work = false;
+    public bool mail = true;
 
     //不同的标题
     public string[,] mainStoryTitles;

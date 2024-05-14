@@ -85,6 +85,7 @@ public class SubmitNewspaper : MonoBehaviour
             }
 
             //如果都选择了标题和排版 则跳转到下一个场景
+            MainStoryController.Instance.work = true;
             SceneManager.LoadScene("Windows");
 
         }

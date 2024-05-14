@@ -11,7 +11,7 @@ public class MoveToNewspaper : MonoBehaviour
 
     public string sceneName; 
 
-    public int titleFlag = 0 ;
+    // public int titleFlag = 0 ;
     // Start is called before the first frame update
     private bool isDragging = false; // 标记是否正在拖拽
     private Vector3 offset; // 鼠标与物体位置的偏移量
@@ -29,7 +29,7 @@ public class MoveToNewspaper : MonoBehaviour
         //记录初始位置
         Debug.Log("start");
         initialPosition = transform.position;
-        titleFlag = MainStoryController.Instance.playerChoiceIndexs[MainStoryController.Instance.nowMainStoryIndex];
+        // titleFlag = MainStoryController.Instance.playerChoiceIndexs[MainStoryController.Instance.nowMainStoryIndex];
     }
     void OnMouseDown()
     {
@@ -53,8 +53,8 @@ public class MoveToNewspaper : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision){
         if (collision.gameObject.CompareTag("NewsLocation"))
             {
-                if(titleFlag == 0){
-                    PopupsSetting("先把放大镜拖拽到news上为它选择一个标题");
+                if(MainStoryController.Instance.playerChoiceIndexs[MainStoryController.Instance.nowDay*3] == 0 || MainStoryController.Instance.playerChoiceIndexs[MainStoryController.Instance.nowDay*3+1] == 0 || MainStoryController.Instance.playerChoiceIndexs[MainStoryController.Instance.nowDay*3+2] == 0){
+                    PopupsSetting("先把放大镜拖拽到新闻素材上上为它们选择一个标题");
                     return;
                 }
                 if(collidable&&collision.gameObject.GetComponent<BlockController>().free()){
@@ -62,7 +62,8 @@ public class MoveToNewspaper : MonoBehaviour
                 // 将自己的active设为false
                 //从collision中获取他身上的text
 
-                blockString = gameObject.name + " is in  " + collision.gameObject.name +"but you can click to cancel";
+                // blockString = gameObject.name + " is in  " + collision.gameObject.name +"but you can click to cancel";
+                blockString = MainStoryController.Instance.mainStoryTitles[MainStoryController.Instance.nowDay*3+myOffset,0]+"(单击可重选)";
                 //调整自己的位置
                 float y = 3.0f * myOffset;
                 transform.position = new Vector3(12.0f, y, 0.0f);

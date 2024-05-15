@@ -45,7 +45,7 @@ public class Blinking : MonoBehaviour
 
     private void Start()
     {
-        StartBlinking();
+        // StartBlinking();
     }
 
     public void StartBlinking()

@@ -47,7 +47,7 @@ public class EndToday : MonoBehaviour
                     plot8.SetActive(true);}
                 else{
                     EndDay();
-                    /SceneManager.LoadScene("MainScence");
+                    //SceneManager.LoadScene("MainScence");
                 }
                 
                 

@@ -20,8 +20,8 @@ public class dataSave : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentDay = MainStoryController.Instance.nowDay;
-        Text.text = "µÚ" + currentDay + "Ìì";
+        currentDay = MainStoryController.Instance.systemDay+1;
+        Text.text = "ä¸Šç­ç¬¬" + currentDay + "å¤©";
 
     }
 
@@ -30,11 +30,11 @@ public class dataSave : MonoBehaviour
     {
         
     }
-    //¿ªÊ¼ĞÂÓÎÏ·
+    //ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½Ï·
   public  void StartData() {
         /*day = new Day();
             day.numberDay = number;
-            day.currentDay = "µÚ"+day.numberDay +"Ìì";
+            day.currentDay = "ï¿½ï¿½"+day.numberDay +"ï¿½ï¿½";
           //  Debug.Log(day.numberDay+day.currentDay);
             list.list.Add(day);
            // Debug.Log(list.list[0].currentDay);
@@ -54,7 +54,7 @@ public class dataSave : MonoBehaviour
         SceneManager.LoadScene("windows");
 
     }
-    //Ìí¼ÓÊı¾İ
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
    public void SaveData()
     {
         string filepath = Application.streamingAssetsPath + "/dataList.json";
@@ -65,7 +65,7 @@ public class dataSave : MonoBehaviour
             int current = currentDay;
             current++;
             day.numberDay = current;
-            day.currentDay = "µÚ" + day.numberDay + "Ìì";
+            day.currentDay = "ï¿½ï¿½" + day.numberDay + "ï¿½ï¿½";
             list.list.Add(day);
             string json = JsonUtility.ToJson(list);
             //Debug.Log(json);
@@ -78,7 +78,7 @@ public class dataSave : MonoBehaviour
             }
         }
     }
-    //¶ÁÈ¡Êı¾İ
+    //ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½
   public  void ReadData()
     {
         string nowDay=null;
@@ -107,7 +107,7 @@ public class dataSave : MonoBehaviour
         }
         else
         {
-            Text.text ="µÚ1Ìì";
+            Text.text ="ï¿½ï¿½1ï¿½ï¿½";
         }
     }
     public void ReadData2()

@@ -19,6 +19,8 @@ public class EndToday : MonoBehaviour
     public GameObject plot4;
     public GameObject plot6;
 
+    public GameObject plot8;
+
     void OnMouseDown()
     {
         // 检查物体标签是否为ClicktoSubmit
@@ -27,11 +29,11 @@ public class EndToday : MonoBehaviour
             if(MainStoryController.Instance.miniGame && MainStoryController.Instance.work && MainStoryController.Instance.mail)
             {
 
-                if (MainStoryController.Instance.nowDay == 7 || MainStoryController.Instance.nowDay == 9)
+                if (MainStoryController.Instance.systemDay == 6 || MainStoryController.Instance.systemDay == 8)
                 {
                     MailManager.Instance.AddMail();
                 }
-                if(MainStoryController.Instance.nowDay == 10)
+                if(MainStoryController.Instance.systemDay == 9)
                 {
                     SceneManager.LoadScene("TapScence");
                 }
@@ -41,9 +43,11 @@ public class EndToday : MonoBehaviour
                     plot3.SetActive(true);
                 }else if(MainStoryController.Instance.systemDay == 4){
                     plot6.SetActive(true);
-                }else{
+                }else if(MainStoryController.Instance.systemDay == 8){
+                    plot8.SetActive(true);}
+                else{
                     EndDay();
-                    // SceneManager.LoadScene("MainStory");
+                    /SceneManager.LoadScene("MainScence");
                 }
                 
                 
@@ -57,10 +61,15 @@ public class EndToday : MonoBehaviour
     }
 
     public void EndDay(){
+        if(MainStoryController.Instance.systemDay == 4 || MainStoryController.Instance.systemDay == 5){
+            MainStoryController.Instance.nowDay--;
+        }
         MainStoryController.Instance.nowDay++;
         MainStoryController.Instance.systemDay++;
         MainStoryController.Instance.work = false;
         MainStoryController.Instance.nowOffset = 0;
+        // SceneManager.LoadScene("MainScence");
+        
     }
     // Start is called before the first frame update
     void Start()

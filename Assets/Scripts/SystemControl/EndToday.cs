@@ -47,7 +47,7 @@ public class EndToday : MonoBehaviour
                     plot8.SetActive(true);}
                 else{
                     EndDay();
-                    // SceneManager.LoadScene("MainStory");
+                    /SceneManager.LoadScene("MainScence");
                 }
                 
                 
@@ -68,7 +68,7 @@ public class EndToday : MonoBehaviour
         MainStoryController.Instance.systemDay++;
         MainStoryController.Instance.work = false;
         MainStoryController.Instance.nowOffset = 0;
-        SceneManager.LoadScene("MainScence");
+        // SceneManager.LoadScene("MainScence");
         
     }
     // Start is called before the first frame update

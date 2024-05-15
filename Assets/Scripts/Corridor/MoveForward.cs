@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public float lightDownSpeed = 0.1f;
     public float distanceToLoadScene = 10f; // 移动多少距离后加载场景
     public string nextSceneName = "ClassScence";
+    public Light directionalLight;
 
     private Transform playerCamera; // 玩家相机的Transform组件
     private float distanceMovedSinceLastLookDown = 0f; // 自上次向下看以来已移动的距离
@@ -18,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        directionalLight.transform.rotation = Quaternion.Euler(50, -30, 0);
         // 获取玩家相机的Transform组件
         playerCamera = Camera.main.transform;
     }
@@ -80,5 +82,10 @@ public class PlayerMovement : MonoBehaviour
             }
         }
         
+    }
+
+    private void OnDestroy()
+    {
+        directionalLight.intensity = 1;
     }
 }

@@ -919,8 +919,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nowMainStoryIndex: 0
-  nowDay: 0
-  systemDay: 4
+  nowDay: 3
+  systemDay: 3
   nowOffset: 0
   miniGame: 1
   work: 1

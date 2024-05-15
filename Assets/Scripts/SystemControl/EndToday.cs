@@ -13,6 +13,8 @@ public class EndToday : MonoBehaviour
     public TextMeshProUGUI TipText;
     public GameObject dialogBox;
 
+    public GameObject plot2;
+    public GameObject plot3;
 
     void OnMouseDown()
     {
@@ -21,6 +23,7 @@ public class EndToday : MonoBehaviour
         {      
             if(MainStoryController.Instance.miniGame && MainStoryController.Instance.work && MainStoryController.Instance.mail)
             {
+
                 if (MainStoryController.Instance.nowDay == 7 || MainStoryController.Instance.nowDay == 9)
                 {
                     MailManager.Instance.AddMail();
@@ -29,13 +32,16 @@ public class EndToday : MonoBehaviour
                 {
                     SceneManager.LoadScene("TapScence");
                 }
-                MainStoryController.Instance.nowDay++;
-                MainStoryController.Instance.systemDay++;
-                MainStoryController.Instance.miniGame = false;
-                MainStoryController.Instance.work = false;
-                MainStoryController.Instance.mail = false;
-                MainStoryController.Instance.nowOffset = 0;
-                // SceneManager.LoadScene("MainScene");
+                if(MainStoryController.Instance.systemDay == 0){
+                    plot2.SetActive(true);
+                }else if(MainStoryController.Instance.systemDay == 3){
+                    plot3.SetActive(true);
+                }
+                else{
+                    EndDay();
+                    // SceneManager.LoadScene("MainStory");
+                }
+                
                 
             }else{
                 dialogBox.SetActive(true);
@@ -44,6 +50,13 @@ public class EndToday : MonoBehaviour
             }
 
         }
+    }
+
+    public void EndDay(){
+        MainStoryController.Instance.nowDay++;
+        MainStoryController.Instance.systemDay++;
+        MainStoryController.Instance.work = false;
+        MainStoryController.Instance.nowOffset = 0;
     }
     // Start is called before the first frame update
     void Start()

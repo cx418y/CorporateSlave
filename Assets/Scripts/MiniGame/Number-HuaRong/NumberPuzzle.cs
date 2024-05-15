@@ -23,6 +23,7 @@ public class NumberPuzzle : MonoBehaviour
     
     public int gridSize = 4; // 网格尺寸
     public Text winText; // 胜利文本
+    public GameObject gridObj;
 
     private int[,] puzzleGrid; // 数字华容道布局
     private GameObject[,] CeilItems; // 网格单元格预制体
@@ -72,7 +73,7 @@ public class NumberPuzzle : MonoBehaviour
             {
                 puzzleGrid[x, y] = number;
                 number++;
-                CeilItems[x, y] = transform.GetChild((x * gridSize) + y).gameObject;
+                CeilItems[x, y] = gridObj.transform.GetChild((x * gridSize) + y).gameObject;
                 CeilItems[x, y].GetComponent<CeilItem>().XIndex = x;
                 CeilItems[x, y].GetComponent<CeilItem>().YIndex = y;
             }
@@ -84,10 +85,10 @@ public class NumberPuzzle : MonoBehaviour
         puzzleGrid[emptyTileX, emptyTileY] = 0;
 
         // 打乱数字顺序
-        // ShufflePuzzle();
+        ShufflePuzzle();
     }
 
-    void ShufflePuzzle()
+    public void ShufflePuzzle()
     {
         // 随机交换数字位置
         for (int i = 0; i < 1000; i++)

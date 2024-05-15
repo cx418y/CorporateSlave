@@ -115,7 +115,7 @@ public class Throw : MonoBehaviour
             }
             if(AllDestroyed)
             {
-                SceneManager.LoadScene("SampleScene");
+                SceneManager.LoadScene("Windows");
             }
 
             // µÈ´ýÒ»Ãë

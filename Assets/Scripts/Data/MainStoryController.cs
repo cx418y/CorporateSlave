@@ -67,6 +67,9 @@ public class MainStoryController : MonoBehaviour
 
     public string[,] plot8;//第九天上班后
 
+    public string[,] plot9;//第六天在家
+    public string[,] plot10;//第七天在家
+
 
     // 在Awake方法中加载剧本内容（这里假设剧本内容已经存储在数组中）
     void ShuffleRows(string[,] array)
@@ -250,6 +253,21 @@ public class MainStoryController : MonoBehaviour
             {"班主任：","而且双方都有错啦，不存在说偏袒哪一方的"},
             {"班主任：","主任你就放心吧"},
             {"班主任：","......"},
+        };
+
+        plot9 = new string[,]
+        {   
+            {"画外","*今天不上班，你如往常一般打开电视“做背景音”，然后开始分析手头的新闻任务*"},
+            {"画外","*花边、花边还是花边，你没了兴趣。转头拿起报纸看起来....*"},
+        };
+
+        plot10 = new string[,]
+        {   
+            {"画外","*第七天也还是一样*"},
+            {"画外","*突然，电视机的直播报道吸引了你的注意*"},
+            {"画外","*电视上正转播着法院的判决现场，而当事的被告正是那个特校校长*"},
+            {"法官：","法官：依据现有证据，被告判处3个月拘役，缓刑6个月。"},
+            {"报道：","“被告判处轻刑，并得以缓刑，翻译成手语的瞬间，法庭内充满了听觉障碍人士发出的惊呼声。”"},
         };
         //为每个story添加3个可选的标题
         mainStoryTitles = new string[,]

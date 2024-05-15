@@ -25,7 +25,7 @@ public class Blinking : MonoBehaviour
 
     private bool isBlinking = false;
 
-    public GameObject whiteMail;
+    // public GameObject whiteMail;
 
     void Awake()
     {
@@ -52,7 +52,7 @@ public class Blinking : MonoBehaviour
     {
         // 启动 Coroutine 来控制图片的闪烁
         isBlinking = true;
-        SpriteRenderer redDot = whiteMail.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>();
+        SpriteRenderer redDot = transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>();
         Color color = redDot.color;
         // 修改透明度值
         color.a = 1;
@@ -65,13 +65,13 @@ public class Blinking : MonoBehaviour
         while (isBlinking)
         {
             // 切换图片的显示状态
-            SpriteRenderer icon = whiteMail.GetComponent<SpriteRenderer>();
+            SpriteRenderer icon = GetComponent<SpriteRenderer>();
             Color color = icon.color;
             // 修改透明度值
             color.a = 1-color.a;
             icon.color = color;
 
-            SpriteRenderer redDot = whiteMail.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>();
+            SpriteRenderer redDot = transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>();
             Color color2 = redDot.color;
             // 修改透明度值
             color2.a = 1 - color2.a;
@@ -87,13 +87,13 @@ public class Blinking : MonoBehaviour
         // 停止 Coroutine
         isBlinking = false;
         StopCoroutine(Blink());
-        SpriteRenderer icon = whiteMail.GetComponent<SpriteRenderer>();
+        SpriteRenderer icon = GetComponent<SpriteRenderer>();
         Color color = icon.color;
         // 修改透明度值
         color.a = 1;
         icon.color = color;
 
-        SpriteRenderer redDot = whiteMail.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>();
+        SpriteRenderer redDot = transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>();
         Color color2 = redDot.color;
         // 修改透明度值
         color2.a = 0;

@@ -21,6 +21,7 @@ public class EndToday : MonoBehaviour
         {      
             if(MainStoryController.Instance.miniGame && MainStoryController.Instance.work && MainStoryController.Instance.mail)
             {
+<<<<<<< HEAD
                 if (MainStoryController.Instance.nowDay == 7 || MainStoryController.Instance.nowDay == 10)
                 {
                     MailManager.Instance.AddMail();
@@ -28,6 +29,15 @@ public class EndToday : MonoBehaviour
                     {
                         SceneManager.LoadScene("Mail");
                     }
+=======
+                if (MainStoryController.Instance.nowDay == 7 || MainStoryController.Instance.nowDay == 9)
+                {
+                    MailManager.Instance.AddMail();
+                }
+                if(MainStoryController.Instance.nowDay == 10)
+                {
+                    SceneManager.LoadScene("TapScence");
+>>>>>>> a4d7680b45fb3a85294685ed7b5d349cb2d41045
                 }
                 MainStoryController.Instance.nowDay++;
                 MainStoryController.Instance.systemDay++;

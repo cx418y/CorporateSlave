@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -8,9 +9,12 @@ public class PlayerMovement : MonoBehaviour
     public float lookDownSpeed = 5f; // 向下看的速度
     public Light[] worldLights; // 世界灯光
     public float lightDownSpeed = 0.1f;
+    public float distanceToLoadScene = 10f; // 移动多少距离后加载场景
+    public string nextSceneName = "ClassScence";
 
     private Transform playerCamera; // 玩家相机的Transform组件
     private float distanceMovedSinceLastLookDown = 0f; // 自上次向下看以来已移动的距离
+    private float totalDistanceMoved = 0f; // 总共移动的距离
 
     void Start()
     {
@@ -26,18 +30,25 @@ public class PlayerMovement : MonoBehaviour
             // 移动玩家
             float distance = moveSpeed * Time.deltaTime;
             transform.Translate(Vector3.forward * distance);
+            totalDistanceMoved += distance;
 
             // 更新移动距离并检查是否需要向下看
             // distanceMovedSinceLastLookDown += distance;
             // if (distanceMovedSinceLastLookDown >= distanceToLookDown)
             // {
-                LookDown();
+            LookDown();
                 // distanceMovedSinceLastLookDown = 0f; // 重置已移动距离
                 // 更新灯光强度
                 UpdateLightIntensity();
             // }
 
-            
+            if (totalDistanceMoved >= distanceToLoadScene)
+            {
+                SceneManager.LoadScene(nextSceneName);
+            }
+
+
+
         }
     }
 

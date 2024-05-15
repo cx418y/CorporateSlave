@@ -153,7 +153,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -533,18 +533,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29c545396e583d94a911094035cfdfce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
+  moveSpeed: 1
   distanceToLookDown: 3
   lookDownAngle: 100
-  lookDownSpeed: 5
+  lookDownSpeed: 3
   worldLights:
   - {fileID: 811181777}
   - {fileID: 1880426304}
   - {fileID: 1830530144}
   - {fileID: 214162811}
   - {fileID: 1972810562}
-  lightDownSpeed: 100
-  distanceToLoadScene: 12
+  lightDownSpeed: 50
+  distanceToLoadScene: 13
   nextSceneName: ClassScence
   directionalLight: {fileID: 1937999527}
 --- !u!4 &335169769

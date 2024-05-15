@@ -1379,7 +1379,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 149.79803, y: 200}
+  m_AnchoredPosition: {x: 196, y: 351}
   m_SizeDelta: {x: 316.0579, y: 166.5509}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &891388620
@@ -2156,6 +2156,8 @@ MonoBehaviour:
   miniGame: 1
   work: 0
   mail: 1
+  feedback1: []
+  feedback2: []
   playerChoiceIndexs: 
   playerChoiceBlockIndexs: 
 --- !u!4 &1830076736

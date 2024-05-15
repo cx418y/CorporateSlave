@@ -43,6 +43,9 @@ public class MainStoryController : MonoBehaviour
     
     public string[,] mainStoryFeedBacks;
 
+    public string[] feedback1;
+    public string[] feedback2;
+
     //需要用一个int数组记录玩家的选择标题 这个int数组的长度等同于mainStoryLines的长度 并且需要存储他们对应的权重 是一个4*n的数组
 
     public int[] playerChoiceIndexs;
@@ -322,6 +325,74 @@ public class MainStoryController : MonoBehaviour
             {"feedback3.1","feedback3.2","feedback3.3"},
             {"feedback4.1","feedback4.2","feedback4.3"},
             {"feedback5.1","feedback5.2","feedback5.3"},
+        };
+
+        feedback1 = new string[]
+        {
+            "1134",
+            "1167",
+            "1200",
+            "1800",
+            "1600",
+            "1927",
+            "1344",
+            "1988",
+            "3104",
+            "200",
+            "8900",
+            "2100",
+            "1450",
+            "11590",
+            "22589",
+            "11990",
+            "210",
+            "40",
+            "90000",
+            "2069",
+            "5400",
+            "7900",
+            "8157",
+            "3908",
+            "2683",
+            "10",
+            "9863",
+            "2199",
+            "125",
+            "5830",
+        };
+
+        feedback2 = new string[]
+        {
+            "237",
+            "870",
+            "69",
+            "99",
+            "40",
+            "88",
+            "499",
+            "277",
+            "1080",
+            "2",
+            "5800",
+            "20",
+            "176",
+            "6790",
+            "376",
+            "4403",
+            "2",
+            "0",
+            "37644",
+            "354",
+            "795",
+            "729",
+            "857",
+            "530",
+            "773",
+            "0",
+            "937",
+            "98",
+            "2",
+            "90",
         };
         //初始化玩家的选择 全部为0
         playerChoiceIndexs = new int[mainStoryTitles.Length];

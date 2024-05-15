@@ -16,6 +16,9 @@ public class EndToday : MonoBehaviour
     public GameObject plot2;
     public GameObject plot3;
 
+    public GameObject plot4;
+    public GameObject plot6;
+
     void OnMouseDown()
     {
         // 检查物体标签是否为ClicktoSubmit
@@ -36,8 +39,9 @@ public class EndToday : MonoBehaviour
                     plot2.SetActive(true);
                 }else if(MainStoryController.Instance.systemDay == 3){
                     plot3.SetActive(true);
-                }
-                else{
+                }else if(MainStoryController.Instance.systemDay == 4){
+                    plot6.SetActive(true);
+                }else{
                     EndDay();
                     // SceneManager.LoadScene("MainStory");
                 }

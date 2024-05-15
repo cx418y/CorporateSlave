@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine.SceneManagement;
 
 
-public class plot4Controller : MonoBehaviour
+public class plot6Controller : MonoBehaviour
 {   
     public GameObject dialog;
     public TextMeshProUGUI RoleText;
@@ -27,13 +27,13 @@ public class plot4Controller : MonoBehaviour
         {
             //加载场景
             if(index <= maxIndex-1){
-                RoleText.text = MainStoryController.Instance.plot4[index,0];
-                DialogText.text = MainStoryController.Instance.plot4[index,1];
+                RoleText.text = MainStoryController.Instance.plot6[index,0];
+                DialogText.text = MainStoryController.Instance.plot6[index,1];
                 index++;
             }else{
                 dialog.SetActive(false);
                 endToday.EndDay();
-                SceneManager.LoadScene("TapScence1");
+                SceneManager.LoadScene("Corridor1");
 
             }
         }
@@ -41,9 +41,9 @@ public class plot4Controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        maxIndex = MainStoryController.Instance.plot4.Length/2;
-        RoleText.text = MainStoryController.Instance.plot4[index,0];
-        DialogText.text = MainStoryController.Instance.plot4[index,1];
+        maxIndex = MainStoryController.Instance.plot6.Length/2;
+        RoleText.text = MainStoryController.Instance.plot6[index,0];
+        DialogText.text = MainStoryController.Instance.plot6[index,1];
         index++;
     }
 

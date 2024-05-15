@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -505, y: 125}
+  m_AnchoredPosition: {x: -454, y: 104}
   m_SizeDelta: {x: 422.11487, y: 305.795}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &89432781
@@ -180,7 +180,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uFF1F\uFF1F\uFF1F"
+  m_text: 'Boss
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9c2c967495bbacd45b2176fac814e46f, type: 2}
   m_sharedMaterial: {fileID: 8937825587026220820, guid: 9c2c967495bbacd45b2176fac814e46f, type: 2}
@@ -429,7 +431,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -495, y: 221}
+  m_AnchoredPosition: {x: -460, y: 198}
   m_SizeDelta: {x: 422.1149, y: 305.795}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &774656247

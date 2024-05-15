@@ -1,46 +1,44 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement1 : MonoBehaviour
 {
-    public float moveSpeed = 5f; // ÒÆ¶¯ËÙ¶È
-    public float distanceToLookDown = 3f; // Ã¿×ß¶àÉÙ¾àÀëºó¿ªÊ¼ÏòÏÂ¿´
-    public float lookDownAngle = 10f; // ÏòÏÂ¿´µÄ½Ç¶È
-    public float lookDownSpeed = 5f; // ÏòÏÂ¿´µÄËÙ¶È
-    public Light[] worldLights; // ÊÀ½çµÆ¹â
+    public float moveSpeed = 5f; // ï¿½Æ¶ï¿½ï¿½Ù¶ï¿½
+    public float distanceToLookDown = 3f; // Ã¿ï¿½ß¶ï¿½ï¿½Ù¾ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½Â¿ï¿½
+    public float lookDownAngle = 10f; // ï¿½ï¿½ï¿½Â¿ï¿½ï¿½Ä½Ç¶ï¿½
+    public float lookDownSpeed = 5f; // ï¿½ï¿½ï¿½Â¿ï¿½ï¿½ï¿½ï¿½Ù¶ï¿½
+    public Light[] worldLights; // ï¿½ï¿½ï¿½ï¿½Æ¹ï¿½
     public float lightDownSpeed = 0.1f;
-    public float distanceToLoadScene = 10f; // ÒÆ¶¯¶àÉÙ¾àÀëºó¼ÓÔØ³¡¾°
+    public float distanceToLoadScene = 10f; // ï¿½Æ¶ï¿½ï¿½ï¿½ï¿½Ù¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø³ï¿½ï¿½ï¿½
     public string nextSceneName = "ClassScence";
-    public Light directionalLight;
 
-    private Transform playerCamera; // Íæ¼ÒÏà»úµÄTransform×é¼þ
-    private float distanceMovedSinceLastLookDown = 0f; // ×ÔÉÏ´ÎÏòÏÂ¿´ÒÔÀ´ÒÑÒÆ¶¯µÄ¾àÀë
-    private float totalDistanceMoved = 0f; // ×Ü¹²ÒÆ¶¯µÄ¾àÀë
+    private Transform playerCamera; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Transformï¿½ï¿½ï¿½
+    private float distanceMovedSinceLastLookDown = 0f; // ï¿½ï¿½ï¿½Ï´ï¿½ï¿½ï¿½ï¿½Â¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½ï¿½Ä¾ï¿½ï¿½ï¿½
+    private float totalDistanceMoved = 0f; // ï¿½Ü¹ï¿½ï¿½Æ¶ï¿½ï¿½Ä¾ï¿½ï¿½ï¿½
 
     void Start()
     {
-        directionalLight.transform.rotation = Quaternion.Euler(50, -30, 0);
-        // »ñÈ¡Íæ¼ÒÏà»úµÄTransform×é¼þ
+        // ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Transformï¿½ï¿½ï¿½
         playerCamera = Camera.main.transform;
     }
 
     void Update()
     {
-        // °´×¡W¼üÍùÇ°×ß
+        // ï¿½ï¿½×¡Wï¿½ï¿½ï¿½ï¿½Ç°ï¿½ï¿½
         if (Input.GetKey(KeyCode.W))
         {
-            // ÒÆ¶¯Íæ¼Ò
+            // ï¿½Æ¶ï¿½ï¿½ï¿½ï¿½
             float distance = moveSpeed * Time.deltaTime;
             transform.Translate(Vector3.forward * distance);
             totalDistanceMoved += distance;
 
-            // ¸üÐÂÒÆ¶¯¾àÀë²¢¼ì²éÊÇ·ñÐèÒªÏòÏÂ¿´
+            // ï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½ï¿½ï¿½ï¿½ë²¢ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½Â¿ï¿½
             // distanceMovedSinceLastLookDown += distance;
             // if (distanceMovedSinceLastLookDown >= distanceToLookDown)
             // {
             LookDown();
-                // distanceMovedSinceLastLookDown = 0f; // ÖØÖÃÒÑÒÆ¶¯¾àÀë
-                // ¸üÐÂµÆ¹âÇ¿¶È
+                // distanceMovedSinceLastLookDown = 0f; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½ï¿½ï¿½ï¿½ï¿½
+                // ï¿½ï¿½ï¿½ÂµÆ¹ï¿½Ç¿ï¿½ï¿½
                 UpdateLightIntensity();
             // }
 
@@ -57,10 +55,10 @@ public class PlayerMovement : MonoBehaviour
     void LookDown()
     {
         // Debug.Log("LookDown");  
-        // ¼ÆËãÄ¿±ê½Ç¶È
+        // ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½Ç¶ï¿½
         // Quaternion targetRotation = Quaternion.Euler(lookDownAngle, playerCamera.eulerAngles.y, playerCamera.eulerAngles.z);
 
-        // Ê¹ÓÃ²åÖµÆ½»¬µØ¸Ä±äÏà»ú½Ç¶È
+        // Ê¹ï¿½Ã²ï¿½ÖµÆ½ï¿½ï¿½ï¿½Ø¸Ä±ï¿½ï¿½ï¿½ï¿½ï¿½Ç¶ï¿½
         // playerCamera.rotation = Quaternion.Lerp(playerCamera.rotation, targetRotation, lookDownSpeed * Time.deltaTime);
         playerCamera.transform.Rotate(lookDownSpeed * Time.deltaTime, 0, 0);
 
@@ -69,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
     void UpdateLightIntensity()
     {
         // Debug.Log(worldLight.intensity);
-        // ¸ù¾ÝÒÆ¶¯¾àÀëÖð½¥½µµÍµÆ¹âÇ¿¶È
+        // ï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ð½¥½ï¿½ï¿½ÍµÆ¹ï¿½Ç¿ï¿½ï¿½
         // float lightIntensity = 1f - (distanceMovedSinceLastLookDown / distanceToLookDown);
         // float lightIntensity = 100f ;
         // worldLight.intensity = Mathf.Clamp(worldLight.intensity-lightlightIntensity, 0f, 1f);
@@ -82,10 +80,5 @@ public class PlayerMovement : MonoBehaviour
             }
         }
         
-    }
-
-    private void OnDestroy()
-    {
-        directionalLight.intensity = 1;
     }
 }
